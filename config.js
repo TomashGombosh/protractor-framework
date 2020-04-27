@@ -8,17 +8,22 @@ exports.config = {
          args: [ "--window-size=1920,1024" ]
        }
     },
-    framework: 'jasmine2',
-    onPrepare: function() {
-        var AllureReporter = require('jasmine-allure-reporter');
-        jasmine.getEnv().addReporter(new AllureReporter());
-        jasmine.getEnv().afterEach(function(done){
-          browser.takeScreenshot().then(function (png) {
-            allure.createAttachment('Screenshot', function () {
+    //Global configuration
+    baseUrl: 'https://devel.manual.co',
+
+    //Allure configuration
+    onPrepare: () => {
+      require("@babel/register");
+      var AllureReporter = require('jasmine-allure-reporter');
+      jasmine.getEnv().addReporter(new AllureReporter());
+      jasmine.getEnv().afterEach( done => {
+        if(done.status === "failed") {
+          browser.takeScreenshot().then(png => {
+            allure.createAttachment('Screenshot', () => {
               return new Buffer(png, 'base64')
             }, 'image/png')();
             done();
           })
-        });
+        }});
     }
 } 

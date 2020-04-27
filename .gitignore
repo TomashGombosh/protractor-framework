@@ -1,0 +1,15 @@
+#Allure report dir
+/target
+/allure-results
+#Node modules dir
+/node_modules
+#Vs code dir's and configuration
+.classpath
+.project
+org.*
+.vscode
+#Environment variables
+.env
+#Logs 
+/logs
+
