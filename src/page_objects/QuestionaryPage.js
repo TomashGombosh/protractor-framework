@@ -33,11 +33,15 @@ export default class QuestionaryPage {
             locator: element(by.css(".questions>div>div:nth-child(3)")),
             name: "Question popup list"
         },
-        button: {
+        buttontext: {
             locator: element(by.css(".questions>div>div:nth-child(4)")),
             name: "Question popup yes button"
-        }
+        },
+        buttonclick: {
+            locator: element(by.css("[name=iAgree]")),
+            name: "Click YES"
 
+        }
     }
 
     footer = {

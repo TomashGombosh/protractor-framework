@@ -1,7 +1,7 @@
 import {get } from './base_page';
 import { element, by } from 'protractor';
 
-export default class QuestionaryPage1 {
+export default class QuestionaryOnePage {
     constructor() {}
 
     get = () => {
