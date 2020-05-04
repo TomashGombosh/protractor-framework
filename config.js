@@ -1,29 +1,45 @@
+require("@babel/register");
+require("protractor");
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['./tests/test.js'], 
-    capabilities: {
-      browserName: 'chrome',
-  
-      chromeOptions: {
-         args: [ "--window-size=1920,1024" ]
-       }
+    specs: ['./src/tests/**.e2e.js'],
+    jasmineNodeOpts: {
+        showColors: true,
+        defaultTimeoutInterval: 60000
     },
+
+    allScriptsTimeout: 30000,
+
+    multiCapabilities: [{
+        browserName: 'chrome'
+        // 'chromeOptions': {
+        //     args: [
+        //         '--disable-browser-side-navigation',
+        //         '--headless',
+        //         '--window-size=1920,1080']
+        // }
+    // }, {
+    //     browserName: 'firefox'
+    // }, {
+    //     browserName: 'safari',
+    //     options: {
+    //         cleanSession: true
+    //     }
+    }],
+
     //Global configuration
-    baseUrl: 'https://devel.manual.co',
+    baseUrl: 'https://manual:menofmanual@www.devel.manual.co',
 
     //Allure configuration
+    /*global jasmine browser allure*/
     onPrepare: () => {
-      require("@babel/register");
-      var AllureReporter = require('jasmine-allure-reporter');
-      jasmine.getEnv().addReporter(new AllureReporter());
-      jasmine.getEnv().afterEach( done => {
-        if(done.status === "failed") {
-          browser.takeScreenshot().then(png => {
-            allure.createAttachment('Screenshot', () => {
-              return new Buffer(png, 'base64')
-            }, 'image/png')();
-            done();
-          })
-        }});
+        browser.manage().window().maximize();
+        browser.manage().timeouts().pageLoadTimeout(40000);
+        browser.manage().timeouts().implicitlyWait(25000);
+
+        // for non-angular page
+        browser.ignoreSynchronization = true;
+        var AllureReporter = require('jasmine-allure-reporter');
+        jasmine.getEnv().addReporter(new AllureReporter());
     }
-} 
+};

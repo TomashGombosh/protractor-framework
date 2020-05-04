@@ -12,4 +12,5 @@ org.*
 .env
 #Logs 
 /logs
-
+#Mac
+.DS_Store
