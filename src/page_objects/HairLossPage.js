@@ -1,4 +1,4 @@
-import { get, click } from './base_page';
+import {get } from './base_page';
 import { element, by } from 'protractor';
 
 export default class HairLossPage {
@@ -9,7 +9,7 @@ export default class HairLossPage {
     }
 
     header = {
-        card: { 
+        card: {
             locator: element(by.id("cart-btn")),
             name: "Cart button"
         }
@@ -19,10 +19,10 @@ export default class HairLossPage {
         completeHairLoss: {
             //TODO add implementation
         },
-        finasteride : {
+        finasteride: {
             locator: element(by.css(".container>div.HairPlanCard:nth-child(2)")),
             name: "Finasteride Hair Loss Plan",
-            addToChartButton : {
+            addToChartButton: {
                 locator: element(by.css(".container>div.HairPlanCard:nth-child(2) button")),
                 name: "Add to Chard Button"
             }
