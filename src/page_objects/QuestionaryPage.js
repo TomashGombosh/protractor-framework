@@ -38,7 +38,7 @@ export default class QuestionaryPage {
             name: "Question popup yes button"
         },
         buttonclick: {
-            locator: element(by.css("[name=iAgree]")),
+            locator: element(by.css("label[class=radio]")),
             name: "Click YES"
 
         }

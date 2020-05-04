@@ -42,9 +42,10 @@ describe('Hair-loss. Question pages', () => {
         expect(isDisplayed(questionaryPage.footer.termsOfSale)).toBe(true);
     });
 
-    it('Check the "YES" button in the questionnaire/0 page'), () => {
-        clickJs(questionaryPage.content.buttonclick);
-        waitToBeVisible(questionaryOnePage.header.progressBar);
+    it('Check the "YES" button in the questionnaire/0 page', () => {
+        click(questionaryPage.content.buttonclick);
+        waitToBeVisible(questionaryOnePage.footer.trustpilotLogo);
+        scrollIntoView(questionaryOnePage.footer.trustpilotLogo);
         expect(isDisplayed(questionaryOnePage.header.progressBar)).toBe(true);
         expect(isDisplayed(questionaryOnePage.header.logoIcon)).toBe(true);
         expect(isDisplayed(questionaryOnePage.content.title)).toBe(true);
@@ -58,16 +59,17 @@ describe('Hair-loss. Question pages', () => {
         expect(isDisplayed(questionaryOnePage.footer.privacyPolicy)).toBe(true);
         expect(isDisplayed(questionaryOnePage.footer.termsAndConditions)).toBe(true);
         expect(isDisplayed(questionaryOnePage.footer.termsOfSale)).toBe(true);
+    });
 
 
-        it('Check the "Logo" in the questionnaire/0 page', () => {
-            click(questionaryPage.header.logoIcon);
-            waitToBeVisible(mainPage.header.shop);
-            expect(isDisplayed(mainPage.header.about)).toBe(true);
-            expect(isDisplayed(mainPage.header.read)).toBe(true);
-            expect(isDisplayed(mainPage.header.login)).toBe(true);
-            expect(isDisplayed(mainPage.header.shop)).toBe(true);
 
-        });
-    };
-});
+    it('Check the "Logo" in the questionnaire/0 page', () => {
+        click(questionaryOnePage.header.logoIcon);
+        waitToBeVisible(mainPage.header.shop);
+        expect(isDisplayed(mainPage.header.about)).toBe(true);
+        expect(isDisplayed(mainPage.header.read)).toBe(true);
+        expect(isDisplayed(mainPage.header.login)).toBe(true);
+        expect(isDisplayed(mainPage.header.shop)).toBe(true);
+
+    });
+})
