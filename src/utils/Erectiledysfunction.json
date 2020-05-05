@@ -1,0 +1,15 @@
+{
+    "sildenafil": {
+        "shortDescriptionSildenafil": "It’s the generic (unbranded) form of Viagra. Highly effective in helping you get and keep an erection. Clinically proven and used by millions of men worldwide. Easier erections, happy days."
+    },
+    "tadalafil": {
+        "shortDescriptionTadalafil": "Known as the “weekend pill” because it is effective for up to 36 hours, Tadalafil is the generic, unbranded version of Cialis. Clinically proven to help you get an erection when you need it."
+
+    },
+    "viagraConnect": {
+        "shortDescriptionViagraConnect": "A widely available solution, highly effective in increasing blood flow to the penis for easier erections."
+    },
+    "viagra": {
+        "shortDescriptionViagra": "The classic, branded version of Sildenafil. This was the first solution out there for easier erections."
+    }
+}
