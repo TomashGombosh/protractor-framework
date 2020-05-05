@@ -1,4 +1,4 @@
-import { get } from './base_page';
+import {get } from './base_page';
 import { element, by } from 'protractor';
 
 export default class QuestionaryPage {
@@ -12,11 +12,16 @@ export default class QuestionaryPage {
         progressBar: {
             locator: element(by.css("header>div>nav>div")),
             name: "Progress bar"
+        },
+        logoIcon: {
+            locator: element(by.css("[class='icon icon-logo-symbol']")),
+            name: "Logo icon"
         }
+
     }
 
     content = {
-        title : {
+        title: {
             locator: element(by.css(".questions>div>div:first-child")),
             name: "Question popup title"
         },
@@ -24,30 +29,34 @@ export default class QuestionaryPage {
             locator: element(by.css(".questions>div>div:nth-child(2)")),
             name: "Question fields"
         },
-        list : {
+        list: {
             locator: element(by.css(".questions>div>div:nth-child(3)")),
             name: "Question popup list"
         },
-        button : {
+        buttontext: {
             locator: element(by.css(".questions>div>div:nth-child(4)")),
             name: "Question popup yes button"
-        }
+        },
+        buttonclick: {
+            locator: element(by.css("label[class=radio]")),
+            name: "Click YES"
 
+        }
     }
 
     footer = {
-        privacyPolicy : {
+        privacyPolicy: {
             locator: element(by.css("footer>div a:nth-child(1)")),
             name: "Privacy Policy Link"
         },
-        termsAndConditions : {
+        termsAndConditions: {
             locator: element(by.css("footer>div a:nth-child(2)")),
             name: "Terms and Conditions link"
         },
-        termsOfSale : {
+        termsOfSale: {
             locator: element(by.css("footer>div a:nth-child(3)")),
             name: "Terms of Sale ling"
         }
     }
-    
+
 }
