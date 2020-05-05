@@ -33,7 +33,7 @@ export const enterText = (element, text) => {
 
 export const getText = (element) => {
     log.info(`Get text from the element ${ element.name }`);
-    return element.locator.getText();
+    return element.locator.getText().then(result => result);
 };
 
 export const getAttribute = (element, attribute) => {
