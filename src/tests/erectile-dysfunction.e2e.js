@@ -12,7 +12,7 @@ describe('Erectile-DysfunctionPage', () => {
         browser.waitForAngularEnabled(false);
         erectileDysfunctionPage.get();
     });
-    it('Check the "Choose Upwards" is displayed', () => {
+    it('Check the "Sex Health" is displayed', () => {
         waitToBeVisible(erectileDysfunctionPage.header.sexHealth);
         expect(isDisplayed(erectileDysfunctionPage.header.sexHealth)).toBe(true);
         scrollIntoView(erectileDysfunctionPage.sildenafilContent.sildenafil);
