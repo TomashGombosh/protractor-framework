@@ -11,5 +11,9 @@
     },
     "viagra": {
         "shortDescriptionViagra": "The classic, branded version of Sildenafil. This was the first solution out there for easier erections."
+    },
+    "replacedText": {
+        "itemHasReplaced": "You had a prescription item in your cart already. This item has replaced it."
+
     }
 }

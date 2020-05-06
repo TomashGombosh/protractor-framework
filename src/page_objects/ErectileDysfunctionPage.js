@@ -3,7 +3,6 @@ import { element, by } from 'protractor';
 
 export default class ErectileDysfunctionPage {
     constructor() {}
-
     get = () => {
         get(`${browser.baseUrl}/erectile-dysfunction`);
     }
@@ -31,8 +30,6 @@ export default class ErectileDysfunctionPage {
             locator: element(by.css(".container:first-child>div>div.EdProductCrd:first-child>div>a:first-child")),
             name: "Sildenafil Button Click"
         }
-
-
     }
     tadalafilContent = {
         tadalafil: {
@@ -42,14 +39,12 @@ export default class ErectileDysfunctionPage {
         tadalafilDescription: {
             locator: element(by.css(".container:first-child>div>div.EdProductCrd:last-child>div:nth-child(2)")),
             name: "tadalafil Description"
-
         },
         tadalafilStartFromButton: {
             locator: element(by.css(".container:first-child>div>div.EdProductCrd:last-child>div>a:first-child")),
             name: "Tadalafil Button"
         }
     }
-
     viagraConnectContent = {
         viagraConnect: {
             locator: element(by.cssContainingText('div[class=EdProductCrd--ttl]', 'Viagra Connect')),
@@ -58,7 +53,6 @@ export default class ErectileDysfunctionPage {
         viagraConnectDescription: {
             locator: element(by.css(".container:last-child>div>div.EdProductCrd:first-child>div:nth-child(2)")),
             name: " viagraConnect Description"
-
         },
         viagraConnectStartFromButton: {
             locator: element(by.css(".container:last-child>div>div.EdProductCrd:first-child>div>a:first-child")),
@@ -79,9 +73,5 @@ export default class ErectileDysfunctionPage {
             locator: element(by.css(".container:last-child>div>div.EdProductCrd:last-child>div>a:first-child")),
             name: "viagra Button"
         }
-
     }
-
-
-
 }

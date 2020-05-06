@@ -2,19 +2,15 @@ import { click, clickOnDiv, isDisplayed, waitToBeVisible, scrollIntoView, getTex
 import ErectileDysfunctionPage from '../page_objects/ErectileDysfunctionPage';
 import ViagraSildenafilPage from '../page_objects/ViagraSildenafilPage';
 
-
 /*global expect describe beforeAll beforeEach afterEach it browser*/
 describe('Erectile-DysfunctionPage', () => {
     const erectileDysfunctionPage = new ErectileDysfunctionPage();
     const erectiledysfunction = require('../utils/Erectiledysfunction.json')
     const viagraSildenafilPage = new ViagraSildenafilPage();
 
-
-    beforeAll(() => {
+    beforeEach(() => {
         browser.waitForAngularEnabled(false);
         erectileDysfunctionPage.get();
-    });
-    it('Check the "Sex Health" is displayed', () => {
         waitToBeVisible(erectileDysfunctionPage.header.sexHealth);
         expect(isDisplayed(erectileDysfunctionPage.header.sexHealth)).toBe(true);
         scrollIntoView(erectileDysfunctionPage.sildenafilContent.sildenafil);
@@ -45,10 +41,11 @@ describe('Erectile-DysfunctionPage', () => {
         expect(isDisplayed(viagraSildenafilPage.title.twelve)).toBe(true);
         expect(isDisplayed(viagraSildenafilPage.title.sixEveryMonth)).toBe(true);
         expect(isDisplayed(viagraSildenafilPage.title.eighteenEveryThreeMonths)).toBe(true);
-        //scrollIntoView(viagraSildenafilPage.title.addToChartButton);
         doubleClick(viagraSildenafilPage.title.addToChartButton);
         waitToBeVisible(viagraSildenafilPage.title.labelText);
         expect(isDisplayed(viagraSildenafilPage.title.labelText)).toBe(true);
+    });
+    it('Check the "Sex Health" is displayed', () => {
         click(viagraSildenafilPage.title.clickXCrossButton);
         waitToBeVisible(viagraSildenafilPage.title.labelTextEmpty);
         expect(isDisplayed(viagraSildenafilPage.title.labelTextEmpty)).toBe(true);
@@ -56,9 +53,15 @@ describe('Erectile-DysfunctionPage', () => {
         expect(isDisplayed(viagraSildenafilPage.title.shopED)).toBe(true);
         expect(isDisplayed(viagraSildenafilPage.title.shopSkin)).toBe(true);
         expect(isDisplayed(viagraSildenafilPage.title.shopDailyHealth)).toBe(true);
-
-
     })
-
-
+    it('Added new goods to the cart', () => {
+        click(viagraSildenafilPage.title.backButton);
+        click(viagraSildenafilPage.title.eight);
+        click(viagraSildenafilPage.title.addToChartButton);
+        waitToBeVisible(viagraSildenafilPage.title.itemHasreplacedText);
+        expect(isDisplayed(viagraSildenafilPage.title.itemHasreplacedText));
+        expect(getText(viagraSildenafilPage.title.itemHasreplacedText)).toEqual(erectiledysfunction.replacedText.itemHasReplaced)
+        expect(isDisplayed(viagraSildenafilPage.title.undoButton));
+        click(viagraSildenafilPage.title.undoButton);
+    })
 })

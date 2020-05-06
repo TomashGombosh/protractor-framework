@@ -78,5 +78,17 @@ export default class ViagraSildenafilPage {
             locator: element(by.css("div[class=cart__btn]>a:nth-child(4)")),
             name: "Shop Daily Health"
         },
+        backButton: {
+            locator: element(by.css("div[class=cart__back]")),
+            name: "back button"
+        },
+        itemHasreplacedText: {
+            locator: element(by.css("div[class=PomOverriddenNotice--ttl]")),
+            name: "Replace text"
+        },
+        undoButton: {
+            locator: element(by.css("button[class=PomOverriddenNotice--cta]")),
+            name: "Undo button"
+        },
     }
 }
