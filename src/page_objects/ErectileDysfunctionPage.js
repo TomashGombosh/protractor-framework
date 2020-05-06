@@ -22,11 +22,17 @@ export default class ErectileDysfunctionPage {
             locator: element(by.css(".container:first-child>div>div.EdProductCrd:first-child>div:nth-child(2)")),
             name: "Sildenafil Description"
         },
-        sildenafilStartFromButton: {
+        sildenafilStartFromButtonText: {
             locator: element(by.css(".container:first-child>div>div.EdProductCrd:first-child>div>a:first-child")),
-            name: "Sildenafil Button"
+            name: "Sildenafil Button Text"
 
+        },
+        sildenafilStartFromButtonClick: {
+            locator: element(by.css(".container:first-child>div>div.EdProductCrd:first-child>div>a:first-child")),
+            name: "Sildenafil Button Click"
         }
+
+
     }
     tadalafilContent = {
         tadalafil: {
