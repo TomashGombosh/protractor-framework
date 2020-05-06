@@ -49,6 +49,15 @@ describe('Erectile-DysfunctionPage', () => {
         doubleClick(viagraSildenafilPage.title.addToChartButton);
         waitToBeVisible(viagraSildenafilPage.title.labelText);
         expect(isDisplayed(viagraSildenafilPage.title.labelText)).toBe(true);
+        click(viagraSildenafilPage.title.clickXCrossButton);
+        waitToBeVisible(viagraSildenafilPage.title.labelTextEmpty);
+        expect(isDisplayed(viagraSildenafilPage.title.labelTextEmpty)).toBe(true);
+        expect(isDisplayed(viagraSildenafilPage.title.shopHair)).toBe(true);
+        expect(isDisplayed(viagraSildenafilPage.title.shopED)).toBe(true);
+        expect(isDisplayed(viagraSildenafilPage.title.shopSkin)).toBe(true);
+        expect(isDisplayed(viagraSildenafilPage.title.shopDailyHealth)).toBe(true);
+
+
     })
 
 

@@ -53,7 +53,30 @@ export default class ViagraSildenafilPage {
         labelText: {
             locator: element(by.css("div[class=cart__header-label]")),
             name: "Title text"
-        }
-
+        },
+        clickXCrossButton: {
+            locator: element(by.css("div[class=product-cart__close]")),
+            name: "Click X"
+        },
+        labelTextEmpty: {
+            locator: element(by.css("p[class=cart__info]")),
+            name: "Title text"
+        },
+        shopHair: {
+            locator: element(by.css("div[class=cart__btn]>a:first-child")),
+            name: "Shop Hair"
+        },
+        shopED: {
+            locator: element(by.css("div[class=cart__btn]>a:nth-child(2)")),
+            name: "Shop ED"
+        },
+        shopSkin: {
+            locator: element(by.css("div[class=cart__btn]>a:nth-child(3)")),
+            name: "Shop Skin"
+        },
+        shopDailyHealth: {
+            locator: element(by.css("div[class=cart__btn]>a:nth-child(4)")),
+            name: "Shop Daily Health"
+        },
     }
 }
