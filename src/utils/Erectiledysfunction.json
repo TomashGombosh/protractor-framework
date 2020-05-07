@@ -15,5 +15,26 @@
     "replacedText": {
         "itemHasReplaced": "You had a prescription item in your cart already. This item has replaced it."
 
+    },
+    "getInTheMood": {
+        "getInTheMoodDescription": "You still need to be sexually aroused for it to work, so everything needs to be exciting. You’ve got this."
+    },
+    "pill": {
+        "pillDescription": "Take a pill an hour before you want to have sex. Sildenafil starts to work within 30-60 mins and maximum erection potential happens around the 1 hour mark."
+    },
+    "enjoy": {
+        "enjoyDescription": "Sildenafil lasts for around 4 hours (sometimes longer for some men). So relax, no need to rush."
+    },
+    "first": {
+        "firstDescription": "Yes, Sildenafil is exactly the same as Viagra. Sildenafil is the active ingredient in branded Viagra, which you can now buy as non-branded Sildenafil tablets.  Learn more on our blog"
+    },
+    "second": {
+        "secondDescription": "Sildenafil is a PDE5 inhibitor, meaning it works by allowing blood vessels to expand and relax. This increases blood flow to the penis when a man is aroused, which improves sexual performance for men with erectile dysfunction (ED). Sildenafil and Viagra work in exactly the same way, because the active ingredient is identical."
+    },
+    "third": {
+        "thirdDescription": "Most men experience the effects of Sildenafil for up to 4 hours. Usually this is 2-3 hours, but occasionally up to 6."
+    },
+    "four": {
+        "fourDescription": "Sildenafil usually starts to work within 30-60 minutes. Maximum erection potential is usually after 1 hour. Learn more on our blog."
     }
 }

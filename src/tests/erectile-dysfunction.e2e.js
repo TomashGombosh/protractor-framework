@@ -1,4 +1,4 @@
-import { click, clickOnDiv, isDisplayed, waitToBeVisible, scrollIntoView, getText, doubleClick } from '../page_objects/base_page';
+import { click, clickExecuteScript, isDisplayed, waitToBeVisible, scrollIntoView, getText, doubleClick, wait } from '../page_objects/base_page';
 import ErectileDysfunctionPage from '../page_objects/ErectileDysfunctionPage';
 import ViagraSildenafilPage from '../page_objects/ViagraSildenafilPage';
 
@@ -41,11 +41,12 @@ describe('Erectile-DysfunctionPage', () => {
         expect(isDisplayed(viagraSildenafilPage.title.twelve)).toBe(true);
         expect(isDisplayed(viagraSildenafilPage.title.sixEveryMonth)).toBe(true);
         expect(isDisplayed(viagraSildenafilPage.title.eighteenEveryThreeMonths)).toBe(true);
+
+    });
+    it('Check the "Sex Health" is displayed', () => {
         doubleClick(viagraSildenafilPage.title.addToChartButton);
         waitToBeVisible(viagraSildenafilPage.title.labelText);
         expect(isDisplayed(viagraSildenafilPage.title.labelText)).toBe(true);
-    });
-    it('Check the "Sex Health" is displayed', () => {
         click(viagraSildenafilPage.title.clickXCrossButton);
         waitToBeVisible(viagraSildenafilPage.title.labelTextEmpty);
         expect(isDisplayed(viagraSildenafilPage.title.labelTextEmpty)).toBe(true);
@@ -55,6 +56,9 @@ describe('Erectile-DysfunctionPage', () => {
         expect(isDisplayed(viagraSildenafilPage.title.shopDailyHealth)).toBe(true);
     })
     it('Added new goods to the cart', () => {
+        doubleClick(viagraSildenafilPage.title.addToChartButton);
+        waitToBeVisible(viagraSildenafilPage.title.labelText);
+        expect(isDisplayed(viagraSildenafilPage.title.labelText)).toBe(true);
         click(viagraSildenafilPage.title.backButton);
         click(viagraSildenafilPage.title.eight);
         click(viagraSildenafilPage.title.addToChartButton);
@@ -64,4 +68,52 @@ describe('Erectile-DysfunctionPage', () => {
         expect(isDisplayed(viagraSildenafilPage.title.undoButton));
         click(viagraSildenafilPage.title.undoButton);
     })
+    it('How to use Sildenafil', () => {
+        scrollIntoView(viagraSildenafilPage.title.howToUseSildenafil);
+        waitToBeVisible(viagraSildenafilPage.title.howToUseSildenafil)
+        expect(isDisplayed(viagraSildenafilPage.title.howToUseSildenafil));
+        expect(isDisplayed(viagraSildenafilPage.title.getInTheMoodImg));
+        expect(isDisplayed(viagraSildenafilPage.title.getInTheMoodDescription))
+        expect(getText(viagraSildenafilPage.title.getInTheMoodDescription)).toEqual(erectiledysfunction.getInTheMood.getInTheMoodDescription)
+        expect(isDisplayed(viagraSildenafilPage.title.takeThePillImg));
+        expect(isDisplayed(viagraSildenafilPage.title.takeThePillDescription));
+        expect(getText(viagraSildenafilPage.title.takeThePillDescription)).toEqual(erectiledysfunction.pill.pillDescription);
+        expect(isDisplayed(viagraSildenafilPage.title.enjoyImg));
+        expect(isDisplayed(viagraSildenafilPage.title.enjoyDescription));
+        expect(getText(viagraSildenafilPage.title.enjoyDescription)).toEqual(erectiledysfunction.enjoy.enjoyDescription);
+
+        scrollIntoView(viagraSildenafilPage.title.frequentlyAsked);
+        waitToBeVisible(viagraSildenafilPage.title.frequentlyAsked);
+
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyAsked));
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyAskedFirst));
+
+        clickExecuteScript(viagraSildenafilPage.title.frequentlyAskedFirst);
+        clickExecuteScript(viagraSildenafilPage.title.frequentlyAskedFirst);
+
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyDescriptionFirst));
+        expect(getText(viagraSildenafilPage.title.frequentlyDescriptionFirst))
+            .toEqual(erectiledysfunction.first.firstDescription);
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyAskedSecond));
+        clickExecuteScript(viagraSildenafilPage.title.frequentlyAskedSecond);
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyDescriptionSecond));
+        expect(getText(viagraSildenafilPage.title.frequentlyDescriptionSecond)).toEqual(erectiledysfunction.second.secondDescription);
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyAskedThird));
+        clickExecuteScript(viagraSildenafilPage.title.frequentlyAskedThird);
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyDescriptionThird));
+        expect(getText(viagraSildenafilPage.title.frequentlyDescriptionThird)).toEqual(erectiledysfunction.third.thirdDescription)
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyAskedfour));
+        clickExecuteScript(viagraSildenafilPage.title.frequentlyAskedfour);
+        expect(isDisplayed(viagraSildenafilPage.title.frequentlyDescriptionfour));
+        expect(getText(viagraSildenafilPage.title.frequentlyDescriptionfour)).toEqual(erectiledysfunction.four.fourDescription);
+        scrollIntoView(viagraSildenafilPage.title.readMe);
+        waitToBeVisible(viagraSildenafilPage.title.readMe)
+        expect(isDisplayed(viagraSildenafilPage.title.readMe));
+        expect(isDisplayed(viagraSildenafilPage.title.questionTitle));
+        scrollIntoView(viagraSildenafilPage.title.sildenafilReview);
+        waitToBeVisible(viagraSildenafilPage.title.sildenafilReview);
+        expect(isDisplayed(viagraSildenafilPage.title.sildenafilReview));
+
+    })
+
 })

@@ -23,19 +23,19 @@ export default class ViagraSildenafilPage {
             name: "High"
         },
         six: {
-            locator: element(by.css("div.VariantSelector--option-list:nth-child(3)>div:nth-child(1)")),
+            locator: element(by.css("div.VariantSelector--option--transition-enter-done>div>div:first-child")),
             name: "six"
         },
         eight: {
-            locator: element(by.css("div.VariantSelector--option-list:nth-child(3)>div:nth-child(2)")),
+            locator: element(by.css("div.VariantSelector--option--transition-enter-done>div>div:nth-child(2)")),
             name: "eight"
         },
         ten: {
-            locator: element(by.css("div:first-child>div.VariantSelector--option-list>div:nth-child(3)")),
+            locator: element(by.css("div.VariantSelector--option--transition-enter-done>div>div:nth-child(3)")),
             name: "Ten"
         },
         twelve: {
-            locator: element(by.css("div:first-child>div.VariantSelector--option-list>div:nth-child(4)")),
+            locator: element(by.css("div.VariantSelector--option--transition-enter-done>div>div:nth-child(4)")),
             name: "twelve"
         },
         sixEveryMonth: {
@@ -90,5 +90,82 @@ export default class ViagraSildenafilPage {
             locator: element(by.css("button[class=PomOverriddenNotice--cta]")),
             name: "Undo button"
         },
+        howToUseSildenafil: {
+            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div:nth-child(1)>div>span")),
+            name: "How to Use Sildenafil"
+        },
+        getInTheMoodImg: {
+            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(1)>div:first-child")),
+            name: "Get in the Mood Image"
+        },
+        getInTheMoodDescription: {
+            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(1)>div:last-child")),
+            name: "Get in the Mood Description"
+        },
+        takeThePillImg: {
+            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(2)>div:first-child")),
+            name: "Take the pill image"
+        },
+        takeThePillDescription: {
+            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(2)>div:last-child")),
+            name: "Take the pill Description"
+        },
+        enjoyImg: {
+            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(3)>div:first-child")),
+            name: "Enjoy Image"
+        },
+        enjoyDescription: {
+            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(3)>div:last-child")),
+            name: "Enjoy Description"
+        },
+        frequentlyAsked: {
+            locator: element(by.css("div[class='FaqComponent alignQuestions-right image-ed']>div>div>div>div:first-child")),
+            name: "Enjoy"
+        },
+        frequentlyAskedFirst: {
+            locator: element(by.css("div[class=content]>div>div>div>div:nth-child(1)")),
+            name: "Is Sildenafil The Same as Viagra"
+        },
+        frequentlyDescriptionFirst: {
+            locator: element(by.css("div[class=content]>div>div>div>div:nth-child(2)>p")),
+            name: "Description first question"
+        },
+        frequentlyAskedSecond: {
+            locator: element(by.css("div[class=content]>div>div>div:last-child>div:nth-child(3)")),
+            name: "How does Viagra(Sildenafil) work"
+        },
+        frequentlyDescriptionSecond: {
+            locator: element(by.css("div[class=content]>div>div>div:last-child>div:nth-child(4)")),
+            name: "Description second question"
+        },
+        frequentlyAskedThird: {
+            locator: element(by.css("div[class=content]>div>div>div:last-child>div:nth-child(5)")),
+            name: "How long does Viagra(Sildenafil) last"
+        },
+        frequentlyDescriptionThird: {
+            locator: element(by.css("div[class=content]>div>div>div:last-child>div:nth-child(6)")),
+            name: "Description third question"
+        },
+        frequentlyAskedfour: {
+            locator: element(by.css("div[class=content]>div>div>div:last-child>div:nth-child(7)")),
+            name: "How long does it take for Viagra(Sildenafil) to work"
+        },
+        frequentlyDescriptionfour: {
+            locator: element(by.css("div[class=content]>div>div>div:last-child>div:nth-child(8)")),
+            name: "Description four question"
+        },
+        readMe: {
+            locator: element(by.css("div:first-child>div[class='ReadMore section']>div>div:nth-child(1)")),
+            name: "Read me, i'm Helpful"
+        },
+        questionTitle: {
+            locator: element(by.css("div:first-child>div[class='ReadMore section']>div>div:nth-child(2)")),
+            name: "question title"
+        },
+        sildenafilReview: {
+            locator: element(by.css("div.text-center>div:nth-child(1)>div:last-child")),
+            name: "Sildenafil review"
+        },
+
     }
 }

@@ -26,6 +26,14 @@ export const clickOnDiv = (element) => {
     browser.sleep(timeout);
 };
 
+export const clickExecuteScript = (element) => {
+    const timeout = 2000;
+    browser.sleep(timeout).then(() => {
+        browser.executeScript("arguments[0].click();", element.locator.getWebElement())
+            .then(() => log.info(`Click by JS execute ${ element.name }`))
+    });
+}
+
 export const doubleClick = (element) => {
     browser.wait(EC.elementToBeClickable(element.locator), 10000);
     browser.actions().mouseMove(element.locator).doubleClick(element.locator).perform();
@@ -40,7 +48,7 @@ export const enterText = (element, text) => {
 
 export const getText = (element) => {
     log.info(`Get text from the element ${ element.name }`);
-    return element.locator.getText().then(result => result);
+    return element.locator.getText();
 };
 
 export const getAttribute = (element, attribute) => {
