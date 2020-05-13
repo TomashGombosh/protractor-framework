@@ -67,7 +67,6 @@ export default class ErectileDysfunctionPage {
         viagraDescription: {
             locator: element(by.css(".container:last-child>div>div.EdProductCrd:last-child>div:nth-child(2)")),
             name: " viagra Description"
-
         },
         viagraStartFromButton: {
             locator: element(by.css(".container:last-child>div>div.EdProductCrd:last-child>div>a:first-child")),

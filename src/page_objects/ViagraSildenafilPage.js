@@ -93,31 +93,7 @@ export default class ViagraSildenafilPage {
         howToUseSildenafil: {
             locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div:nth-child(1)>div>span")),
             name: "How to Use Sildenafil"
-        },
-        getInTheMoodImg: {
-            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(1)>div:first-child")),
-            name: "Get in the Mood Image"
-        },
-        getInTheMoodDescription: {
-            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(1)>div:last-child")),
-            name: "Get in the Mood Description"
-        },
-        takeThePillImg: {
-            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(2)>div:first-child")),
-            name: "Take the pill image"
-        },
-        takeThePillDescription: {
-            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(2)>div:last-child")),
-            name: "Take the pill Description"
-        },
-        enjoyImg: {
-            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(3)>div:first-child")),
-            name: "Enjoy Image"
-        },
-        enjoyDescription: {
-            locator: element(by.css("div[class='HowItWorks section noTrustpilot']>div>div>div:nth-child(3)>div:last-child")),
-            name: "Enjoy Description"
-        },
+        }, 
         frequentlyAsked: {
             locator: element(by.css("div[class='FaqComponent alignQuestions-right image-ed']>div>div>div>div:first-child")),
             name: "Enjoy"
@@ -166,6 +142,5 @@ export default class ViagraSildenafilPage {
             locator: element(by.css("div.text-center>div:nth-child(1)>div:last-child")),
             name: "Sildenafil review"
         },
-
-    }
+     }
 }
