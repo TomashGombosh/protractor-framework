@@ -19,6 +19,21 @@ export const click = (element) => {
     browser.sleep(timeout);
 };
 
+export const clickOnDiv = (element) => {
+    const timeout = 1000;
+    element.locator.click();
+    log.info(`Click on the ${ element.name }`);
+    browser.sleep(timeout);
+};
+
+export const clickExecuteScript = (element) => {
+    const timeout = 2000;
+    browser.sleep(timeout).then(() => {
+        browser.executeScript("arguments[0].click();", element.locator.getWebElement())
+            .then(() => log.info(`Click by JS execute ${ element.name }`))
+    });
+}
+
 export const doubleClick = (element) => {
     browser.wait(EC.elementToBeClickable(element.locator), 10000);
     browser.actions().mouseMove(element.locator).doubleClick(element.locator).perform();

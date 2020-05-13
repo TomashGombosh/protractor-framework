@@ -2,7 +2,7 @@ require("@babel/register");
 require("protractor");
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['./src/tests/**.e2e.js'],
+    specs: ['./src/tests/erectile-dysfunction.e2e.js'],
     jasmineNodeOpts: {
         showColors: true,
         defaultTimeoutInterval: 60000
@@ -12,19 +12,19 @@ exports.config = {
 
     multiCapabilities: [{
         browserName: 'chrome'
-        // 'chromeOptions': {
-        //     args: [
-        //         '--disable-browser-side-navigation',
-        //         '--headless',
-        //         '--window-size=1920,1080']
-        // }
-    // }, {
-    //     browserName: 'firefox'
-    // }, {
-    //     browserName: 'safari',
-    //     options: {
-    //         cleanSession: true
-    //     }
+            // 'chromeOptions': {
+            //     args: [
+            //         '--disable-browser-side-navigation',
+            //         '--headless',
+            //         '--window-size=1920,1080']
+            // }
+            // }, {
+            //     browserName: 'firefox'
+            // }, {
+            //     browserName: 'safari',
+            //     options: {
+            //         cleanSession: true
+            //     }
     }],
 
     //Global configuration
