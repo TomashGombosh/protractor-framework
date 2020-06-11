@@ -1,26 +1,42 @@
 import { browser, ExpectedConditions } from 'protractor';
-import { getTimeout } from '../utils/constants';
 
 const log = require('../../logger.config');
 
 const EC = ExpectedConditions;
-const GLOBAL_TIMEOUT = getTimeout();
+const GLOBAL_TIMEOUT = 60000;
 
 export const get = (url) => {
-    browser.get(url);
-    log.info(`Navigate to the ${ url }`);
+    browser.get(url)
+        .then(() => {
+            log.info(`Navigate to the ${ url }`);
+        })
+        .catch((err) => log.info(err));
+
+};
+
+export const wait = (timeout) => {
+    const milliseconds = 1000;
+    browser.sleep(timeout * milliseconds)
+        .then(() => {
+            log.info(`Wait ${ timeout } seconds`);
+        });
 };
 
 export const click = (element) => {
-    const timeout = 1000;
-    browser.wait(EC.elementToBeClickable(element.locator), 10000);
-    element.locator.click();
-    log.info(`Click on the ${ element.name }`);
-    browser.sleep(timeout);
+    const timeout = 5000;
+    browser.wait(EC.elementToBeClickable(element.locator), timeout)
+        .then(() => {
+            log.info(`Wait to element clickable ${ element.name } by ${ timeout } ml`);
+        });
+    element.locator.click().then(() => {
+        log.info(`Click on the ${ element.name }`);
+    });
+    wait(0.5);
 };
 
 export const doubleClick = (element) => {
-    browser.wait(EC.elementToBeClickable(element.locator), 10000);
+    const timeout = 5000;
+    browser.wait(EC.elementToBeClickable(element.locator), timeout);
     browser.actions().mouseMove(element.locator).doubleClick(element.locator).perform();
     log.info(`Double click on the ${ element.name }`);
 };
@@ -31,9 +47,25 @@ export const enterText = (element, text) => {
     });
 };
 
-export const getText = (element) => {
-    log.info(`Get text from the element ${ element.name }`);
-    return element.locator.getText();
+export const getText = (element) => element.locator.getText().then((text) => {
+    log.info(`Get text from the element ${ element.name } text: ${ text }`);
+    return text;
+});
+
+export const switchTo = (element) => {
+    browser.switchTo().frame(element.locator.getWebElement())
+        .then(() => {
+            log.info(`Switch to iframe ${ element.name }`);
+        })
+        .catch((err) => log.info(err));
+};
+
+export const switchToDefault = () => {
+    browser.switchTo().defaultContent()
+        .then(() => {
+            log.info(`Switch To Default`);
+        })
+        .catch((err) => log.info(err));
 };
 
 export const getAttribute = (element, attribute) => {
@@ -41,44 +73,50 @@ export const getAttribute = (element, attribute) => {
     return element.locator.getAttribute(attribute);
 };
 
-export const isDisplayed = (element) => {
-    log.info(`Is element ${ element.name } displayed on the page`);
-    return element.locator.isDisplayed();
-};
+export const isDisplayed = (element) => element.locator.isDisplayed().then((disp) => {
+    log.info(`Is ${ element.name } displayed: ${ disp }`);
+    return disp;
+});
 
 export const scrollIntoView = (element) => {
-    browser.executeScript("arguments[0].scrollIntoView();", element.locator.getWebElement());
-    log.info(`Scroll into view ${ element.name }`);
+    browser.executeScript("arguments[0].scrollIntoView();", element.locator.getWebElement())
+        .then(() => {
+            log.info(`Scroll into view ${ element.name }`);
+        });
+
 };
 
 //Wait section
 export const waitToBePresent = (element) => {
-    log.info(`Wait to element ${ element.name } present`);
-    browser.wait(EC.presenceOf(element.locator), GLOBAL_TIMEOUT);
+    browser.wait(EC.presenceOf(element.locator), GLOBAL_TIMEOUT)
+        .then(() => {
+            log.info(`Wait to element ${ element.name } present`);
+        });
 };
 
 export const waitToBeInvisible = (element) => {
-    log.info("Wait to element invisible");
-    browser.wait(EC.invisibilityOf(element), GLOBAL_TIMEOUT);
+    browser.wait(EC.invisibilityOf(element), GLOBAL_TIMEOUT)
+        .then(() => {
+            log.info("Wait to element invisible");
+        });
 };
 
 export const waitToBeVisible = (element) => {
-    browser.wait(EC.visibilityOf(element.locator), GLOBAL_TIMEOUT);
-    log.info(`Wait to element ${ element.name } visible`);
-};
+    browser.wait(EC.visibilityOf(element.locator), GLOBAL_TIMEOUT)
+        .then(() => {
+            log.info(`Wait to element ${ element.name } visible`);
+        });
 
-export const wait = (timeout) => {
-    const milliseconds = 1000;
-    log.info(`Wait ${ timeout } seconds`);
-    browser.sleep(timeout * milliseconds);
 };
-
 
 //Alert section
 export const waitToAlertPresent = () => {
     try {
-        browser.wait(EC.alertIsPresent(), GLOBAL_TIMEOUT);
-        log.info(`Wait to alert present`);
+        browser.wait(EC.alertIsPresent(), GLOBAL_TIMEOUT)
+            .then(() => {
+                log.info(`Wait to alert present`);
+            })
+            .catch((err) => log.info(err));
     } catch (error) {
         log.info(`No allert present in the page`);
     }
