@@ -34,6 +34,21 @@ export const click = (element) => {
     wait(0.5);
 };
 
+export const clickOnDiv = (element) => {
+    const timeout = 1000;
+    element.locator.click();
+    log.info(`Click on the ${ element.name }`);
+    browser.sleep(timeout);
+};
+
+export const clickExecuteScript = (element) => {
+    const timeout = 2000;
+    browser.sleep(timeout).then(() => {
+        browser.executeScript("arguments[0].click();", element.locator.getWebElement())
+            .then(() => log.info(`Click by JS execute ${ element.name }`))
+    });
+}
+
 export const doubleClick = (element) => {
     const timeout = 5000;
     browser.wait(EC.elementToBeClickable(element.locator), timeout);

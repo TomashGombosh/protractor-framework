@@ -2,23 +2,23 @@
    "name": "Protractor-end-to-end-test-framework",
    "private": true,
    "dependencies": {
-      "@babel/core": "^7.9.0",
+      "@babel/core": "^7.9.6",
       "@babel/plugin-proposal-class-properties": "^7.8.3",
       "@babel/plugin-transform-arrow-functions": "^7.8.3",
-      "@babel/preset-env": "^7.9.5",
+      "@babel/preset-env": "^7.9.6",
       "@babel/register": "^7.9.0",
       "dotenv": "^8.2.0",
       "jasmine-allure-reporter": "^1.0.2",
       "log4js": "^6.2.1",
-      "moment": "^2.24.0",
-      "protractor": "^5.4.2"
+      "moment": "^2.25.3",
+      "protractor": "^5.4.2",
+      "selenium-webdriver": "^4.0.0-alpha.7"
    },
    "scripts": {
       "test": "protractor config.js",
       "webdriver:update": "webdriver-manager update",
-		"webdriver:start": "webdriver-manager start",
+      "webdriver:start": "webdriver-manager start",
       "lint": "eslint src/**/*.js"
-      
    },
    "devDependencies": {
       "eslint": "^6.8.0",
